@@ -1,13 +1,12 @@
 var axios = require("axios");
 var open = require("open");
 var Spotify = require("node-spotify-api");
+var song = process.argv[2];
 
 var spotify = new Spotify({
-    id: "72bb7cf4d74b43b9bfa00623abf3b58c",
-    secret: "8b37ded7ce684e418b0dd5d7ae82d03a"
+    id: "***",
+    secret: "***"
 });
-
-var song = process.argv[2];
 
 var play = function (song) {
     spotify.search({ type: 'track', query: song }, function (err, data) {
