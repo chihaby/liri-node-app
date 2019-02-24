@@ -9,7 +9,7 @@ var spotify = new Spotify({
 
 var song = process.argv[2];
 
-function play(song) {
+var play = function (song) {
     spotify.search({ type: 'track', query: song }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
@@ -27,4 +27,6 @@ function play(song) {
     })
 };
 
-play(song);
+module.exports = play(song);
+
+
