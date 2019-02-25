@@ -1,12 +1,10 @@
+var keys = require("./keys.js");
 var axios = require("axios");
 var open = require("open");
 var Spotify = require("node-spotify-api");
-var song = process.argv[2];
+var song = process.argv[3];
 
-var spotify = new Spotify({
-    id: "***",
-    secret: "***"
-});
+var spotify = new Spotify(keys.spotify);
 
 var play = function (song) {
     spotify.search({ type: 'track', query: song }, function (err, data) {
@@ -23,6 +21,7 @@ var play = function (song) {
         console.log("Album: " + songInfo.album.name);
 
         open(preview);
+        //default ace of base the sign
     })
 };
 
