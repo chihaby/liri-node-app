@@ -21,7 +21,11 @@ var play = function (song) {
         console.log("Album: " + songInfo.album.name);
 
         open(preview);
-        //default ace of base the sign
+
+        // If not found song defaults to "The Sign" by Ace Of Base
+        // if(preview === undefined){    
+        //     open(song-url);
+        // }
     })
 };
 
