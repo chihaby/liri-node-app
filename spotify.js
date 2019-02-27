@@ -2,7 +2,7 @@ var keys = require("./keys.js");
 var axios = require("axios");
 var open = require("open");
 var Spotify = require("node-spotify-api");
-var song = process.argv[3];
+var song = process.argv.slice(3).join(' ');
 
 var spotify = new Spotify(keys.spotify);
 

@@ -7,15 +7,25 @@ var command = process.argv[2];
 switch (command) {
 
     case "spotify-this-song":
-        var play = require("./spotify.js");
+        const play = require("./spotify.js");
         break;
 
     case "movie-this":
-        var movie = require("./movies.js");
+        const movie = require("./movies.js");
         break;
 
     case "concert-this":
-        var movie = require("./bands.js");
+        const bands = require("./bands.js");
+        break;
+
+    case "do-what-it-says":
+        const fs = require("fs");
+        const text = fs.readFileSync('random.txt','utf8');
+        const textSplit = text.split(" ", 2);
+        var command = textSplit[0];
+        textSplit[1] = process.argv[3];
+        const replay = require("./spotify.js"); 
+        console.log(text.split); 
         break;
 
     default:
