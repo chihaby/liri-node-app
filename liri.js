@@ -4,21 +4,21 @@ var keys = require("./keys.js");
 var command = process.argv[2];
 
 // executing the value of the CLI
-switch(command) {
+switch (command) {
 
     case "spotify-this-song":
         var play = require("./spotify.js");
-    break;
+        break;
 
     case "movie-this":
         var movie = require("./movies.js");
-    break;
+        break;
 
     case "concert-this":
-    var movie = require("./bands.js");
-    break;
+        var movie = require("./bands.js");
+        break;
 
     default:
-    console.log("command not found");
+        console.log("command not found");
 }
 
