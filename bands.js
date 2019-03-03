@@ -15,15 +15,19 @@ var bands = function (artist) {
                 }
                 console.log('file written');
             })
-            console.log(response.data[0].venue.name);
+
+            // * Name of the venue
+            // * Venue location
+            // * Date of the Event (use moment to format this as "MM/DD/YYYY")
+            for (var i = 0; i < response.data.length; i++) {
+                console.log(response.data[i].venue.name);
+                console.log(response.data[i].venue.city + ", " + response.data[i].venue.region + ". " + response.data[i].venue.country);
+                console.log(moment(response.data[i].datetime).format("MM/DD/YYYY"));
+                console.log("------------------------------\n")
+            }
         })
 }
 
 module.exports = bands(artist);
 
-// * Name of the venue
-
-// * Venue location
-
-// * Date of the Event (use moment to format this as "MM/DD/YYYY")
 

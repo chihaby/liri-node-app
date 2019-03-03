@@ -1,8 +1,9 @@
 require("dotenv").config();
 var keys = require("./keys.js");
+var fs = require('fs');
+var moment = require("moment")
 
 var command = process.argv[2];
-
 // executing the value of the CLI
 switch (command) {
 
@@ -19,16 +20,16 @@ switch (command) {
         break;
 
     case "do-what-it-says":
-        const fs = require("fs");
-        const text = fs.readFileSync('random.txt','utf8');
-        const textSplit = text.split(" ", 2);
-        var command = textSplit[0];
-        textSplit[1] = process.argv[3];
-        const replay = require("./spotify.js"); 
-        console.log(text.split); 
+        const text = require("./do-what-it-says")
         break;
 
     default:
-        console.log("command not found");
+        console.log("Command Not Found");
 }
 
+var text = fs.appendFile("log.txt", JSON.stringify(command + " " + process.argv.slice(3).join(' ')) + " " + moment().format('MMMM Do YYYY, h:mm:ss a') + "\n", function (err) {
+    if (err) {
+        console.log('err', err);
+    }
+    console.log('Log file updated');
+})
