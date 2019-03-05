@@ -8,7 +8,9 @@ var song = process.argv.slice(3).join(' ');
 var spotify = new Spotify(keys.spotify);
 
 var play = function (song) {
+
     spotify.search({ type: 'track', query: song }, function (err, data) {
+        
         if (err) {
             return console.log('Error occurred: ' + err);
         }
@@ -17,11 +19,11 @@ var play = function (song) {
         let artist = songInfo.artists[0].name;
         let preview = songInfo.preview_url;
 
-        if (!songInfo) {
-            songInfo === "all that she wants";
-            artist === "ace of base"
-            open(preview)
-        }
+        // if (!song) {
+        //     data.tracks.items[0].name === "all that she wants";
+        //     artist === "ace of base";
+        //     open(preview)
+        // }
 
         console.log("Artist: " + artist);
         console.log("Song: " + songInfo.name);
