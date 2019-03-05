@@ -2,6 +2,7 @@ require("dotenv").config();
 var keys = require("./keys.js");
 var fs = require('fs');
 var moment = require("moment")
+var doIt = require("./do-what-it-says"); 
 
 var command = process.argv[2];
 // executing the value of the CLI
@@ -18,9 +19,14 @@ switch (command) {
     case "concert-this":
         const bands = require("./bands.js");
         break;
-
+        
+    //takes in a command from a text file (random.txt)
     case "do-what-it-says":
-        const text = require("./do-what-it-says")
+        const str = require("./do-what-it-says");
+        const strSplit = str.split(" ", 2);
+        process.argv[2] = strSplit[0];
+        process.argv[3] = strSplit[1];
+        const textCommand = require("./spotify.js");     
         break;
 
     default:
