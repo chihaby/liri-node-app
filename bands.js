@@ -20,10 +20,11 @@ var bands = function (artist) {
             // * Venue location
             // * Date of the Event (use moment to format this as "MM/DD/YYYY")
             for (var i = 0; i < response.data.length; i++) {
+                console.log("------------------------------");
                 console.log(response.data[i].venue.name);
                 console.log(response.data[i].venue.city + ", " + response.data[i].venue.region + ". " + response.data[i].venue.country);
                 console.log(moment(response.data[i].datetime).format("MM/DD/YYYY"));
-                console.log("------------------------------\n")
+                console.log("------------------------------\n");
             }
         })
 }

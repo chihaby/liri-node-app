@@ -24,11 +24,11 @@ var play = function (song) {
         //     artist === "ace of base";
         //     open(preview)
         // }
-
+        console.log("------------------------------");
         console.log("Artist: " + artist);
         console.log("Song: " + songInfo.name);
         console.log("Album: " + songInfo.album.name);
-        console.log("------------------------------\n")
+        console.log("------------------------------\n");
 
         open(preview);
 

@@ -9,7 +9,7 @@ var movie = function (movieName) {
     // }
     axios.get("http://www.omdbapi.com/?t=" + movieName + "&apikey=6911befb").then(
         function (response) {
-
+            console.log("------------------------------");
             console.log("Title" + response.data.Title);
             console.log("Year" + response.data.Year);
             console.log("imdbRating " + response.data.imdbRating);
@@ -17,7 +17,8 @@ var movie = function (movieName) {
             console.log("Country: " + response.data.Country);
             console.log("Language: " + response.data.Language);
             console.log("Plot: " + response.data.Plot);
-            console.log("Actors: " + response.data.Actors);          
+            console.log("Actors: " + response.data.Actors);  
+            console.log("------------------------------");     
         })
         
 }

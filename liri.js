@@ -22,11 +22,11 @@ switch (command) {
         
     //takes in a command from a text file (random.txt)
     case "do-what-it-says":
-        const str = require("./do-what-it-says");
+        const str = require("./do-what-it-says.js");
         const strSplit = str.split(" ", 2);
         process.argv[2] = strSplit[0];
         process.argv[3] = strSplit[1];
-        const textCommand = require("./spotify.js");     
+        let textCommand = require("./spotify.js");     
         break;
 
     default:
@@ -37,5 +37,7 @@ var text = fs.appendFile("log.txt", JSON.stringify(command + " " + process.argv.
     if (err) {
         console.log('err', err);
     }
+    console.log("------------------------------");
     console.log('Log file updated');
+    console.log("------------------------------");
 })
