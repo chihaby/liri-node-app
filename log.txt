@@ -86,3 +86,8 @@
 "spotify-this-song california" March 6th 2019, 6:37:07 am
 "spotify-this-song california" March 6th 2019, 6:38:13 am
 "do-what-it-says \"I-want-it-that-way\"" March 6th 2019, 6:38:37 am
+"do-what-it-says \"I-want-it-that-way\"" March 9th 2019, 9:16:37 am
+"spotify-this-song hotel california" March 9th 2019, 9:20:49 am
+"movie-this scarface" March 9th 2019, 9:21:29 am
+"concert-this santana" March 9th 2019, 9:22:00 am
+"do-what-it-says \"I-want-it-that-way\"" March 9th 2019, 9:22:54 am
